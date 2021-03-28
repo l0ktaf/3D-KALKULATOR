@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>3D Kalkulator</title>
+        
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <a class="navbar-brand" href="#" style="text-decoration: none;">3D Kalkulator</a>
+                <a class="nav-link font-weight-bold" href="index.html" style="text-decoration: none;">Silinder</a>
+                <a class="nav-link" href="kerucut.html" style="text-decoration: none;">Kerucut</a>
+                <a class="nav-link" href="bola.html" style="text-decoration: none;">Bola</a>
+                
+            </div>
+        </nav>
+        <p id="name">
+        
+        <script type="text/javascript">
+            var nama = prompt("Masukan Nama Anda ");
+            waktunotif();
+            function waktunotif(){
+                var waktu = new Date();
+                var jam= waktu.getHours();
+                if(jam <=11){
+                    document.write("Selamat Pagi, " +nama);
+                }
+                else if(jam <= 16){
+                    document.write("Selamat Siang, " +nama);
+                }
+                else if(jam <=19){
+                    document.write("Selamat Sore, " +nama);
+                }
+                else if(jam < 24){
+                    document.write("Selamat Malam, " +nama);
+                }
+            }
+            
+        </script>
+        <h6>Menghitung Volume dan luas permukaan dari silinder.</h6>
+
+        <input type ="text" placeholder="Masukkan nilai jari-jari (Meter)" id="jari">
+        <input type ="text" placeholder="Masukkan nilai Tinggi (Meter)" id="tinggi">
+        <button onclick="tabung()">Hitung</button>
+        Volume : <span id="jawabv"></span>m²,
+        Luas : <span id="jawabl"></span>m³
+        <script>
+            var jv=document.getElementById('jawabv');
+            var jl=document.getElementById('jawabl');
+            function tabung(){
+                var jj=jari.value;
+                var tg=tinggi.value;
+                jl.innerHTML=2*3.14*(jj+tg);
+                jv.innerHTML=3.14*Math.pow(jj, 2)*tg;
+            }
+        </script>
+    </body>
+</html>
